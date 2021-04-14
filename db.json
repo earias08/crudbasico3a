@@ -1,0 +1,22 @@
+{
+    "cafeteria":[
+        {
+            "nombreProducto":"cafe con leche",
+            "precioProducto": "50",
+            "categoria": "bebida-caliente",
+            "id": 1
+        },
+        {
+            "nombreProducto":"Submarino",
+            "precioProducto": "100",
+            "categoria": "bebida-caliente",
+            "id": 2
+        },
+        {
+            "nombreProducto":"Medialuna xUnidad",
+            "precioProducto": "35",
+            "categoria": "dulce",
+            "id": 3
+        }
+    ]
+}
