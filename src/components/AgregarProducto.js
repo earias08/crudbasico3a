@@ -7,12 +7,15 @@ const AgregarProducto = () => {
   const [precioProducto, setPrecioProducto] = useState(0);
   const [categoria, setCategoria] = useState("");
   const [error, setError] = useState(false);
+  // traer variable de entorno
+  const URL = process.env.REACT_APP_API_URL;
+ 
 
   const leerCategoria = (e) => {
     setCategoria(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     console.log("prueba de submit");
     // validaciones
@@ -23,6 +26,46 @@ const AgregarProducto = () => {
     ) {
       // si esta bien entonces envio los datos del producto a la API
       setError(false);
+
+      // crear un objeto
+      // const producto = {
+      //   nombreProducto: nombreProducto,
+      //   precioProducto: precioProducto,
+      //   categoria: categoria
+      // }
+
+       const producto = {
+        nombreProducto,
+        precioProducto,
+        categoria
+      }
+
+      // enviar el request POST
+      try{
+        // estructura de datos a enviar
+        const cabecera={
+          method: "POST",
+          headers:{
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(producto)
+        };
+        
+        const response = await fetch(URL,cabecera);
+        console.log(response);
+        if(response.status === 201){
+          alert("datos enviados")
+          // mostrar una ventana de sweet alert
+        }
+
+      }catch(error){
+        console.log(error);
+        // mostrar un cartel de error al usuario
+      }
+
+
+      // espero la respuesta
+
     } else {
       // si fallo entonces muestro un cartel de error
       setError(true);
