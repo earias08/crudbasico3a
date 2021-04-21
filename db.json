@@ -35,6 +35,48 @@
       "precioProducto": 130,
       "categoria": "dulce",
       "id": 6
+    },
+    {
+      "nombreProducto": "te",
+      "precioProducto": 0,
+      "categoria": "bebida-fria",
+      "id": 7
+    },
+    {
+      "nombreProducto": "Brownie",
+      "precioProducto": 100,
+      "categoria": "dulce",
+      "id": 8
+    },
+    {
+      "nombreProducto": "licuado",
+      "precioProducto": 100,
+      "categoria": "bebida-fria",
+      "id": 9
+    },
+    {
+      "nombreProducto": "licuado",
+      "precioProducto": 100,
+      "categoria": "bebida-fria",
+      "id": 10
+    },
+    {
+      "nombreProducto": "licuado",
+      "precioProducto": 100,
+      "categoria": "bebida-fria",
+      "id": 11
+    },
+    {
+      "nombreProducto": "licuado",
+      "precioProducto": 100,
+      "categoria": "bebida-fria",
+      "id": 12
+    },
+    {
+      "nombreProducto": "te",
+      "precioProducto": 50,
+      "categoria": "bebida-caliente",
+      "id": 13
     }
   ]
 }

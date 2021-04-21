@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container, Form, Button, Alert } from "react-bootstrap";
+import Swal from 'sweetalert2';
 
 const AgregarProducto = () => {
   // crear states
@@ -9,15 +10,14 @@ const AgregarProducto = () => {
   const [error, setError] = useState(false);
   // traer variable de entorno
   const URL = process.env.REACT_APP_API_URL;
- 
 
   const leerCategoria = (e) => {
     setCategoria(e.target.value);
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("prueba de submit");
+    // console.log(e.target);
     // validaciones
     if (
       nombreProducto.trim() !== "" &&
@@ -34,38 +34,45 @@ const AgregarProducto = () => {
       //   categoria: categoria
       // }
 
-       const producto = {
+      const producto = {
         nombreProducto,
         precioProducto,
-        categoria
-      }
+        categoria,
+      };
 
       // enviar el request POST
-      try{
+      try {
         // estructura de datos a enviar
-        const cabecera={
+        const cabecera = {
           method: "POST",
-          headers:{
-            "Content-Type": "application/json"
+          headers: {
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(producto)
+          body: JSON.stringify(producto),
         };
-        
-        const response = await fetch(URL,cabecera);
-        console.log(response);
-        if(response.status === 201){
-          alert("datos enviados")
-          // mostrar una ventana de sweet alert
-        }
 
-      }catch(error){
+        const response = await fetch(URL, cabecera);
+        console.log(response);
+        if (response.status === 201) {
+          // mostrar una ventana de sweet alert
+          Swal.fire(
+            'Producto agregado',
+            'El producto se cargo correctamente',
+            'success'
+          )
+          // resetear el formulario
+          e.target.reset();
+          // redireccionar al componente ListarProductos
+        }
+      } catch (error) {
         console.log(error);
         // mostrar un cartel de error al usuario
+        Swal.fire(
+          'Ocurrio un error',
+          'Intentelo nuevamente en unos minutos',
+          'error'
+        )
       }
-
-
-      // espero la respuesta
-
     } else {
       // si fallo entonces muestro un cartel de error
       setError(true);
@@ -130,12 +137,11 @@ const AgregarProducto = () => {
         <Button variant="danger" type="submit" className="w-100">
           Guardar
         </Button>
-        {
-          (error === true)?(<Alert variant="danger" className="my-5">
-          Faltan cargar datos obligatorios
-        </Alert>): null
-        }
-        
+        {error === true ? (
+          <Alert variant="danger" className="my-5">
+            Faltan cargar datos obligatorios
+          </Alert>
+        ) : null}
       </Form>
     </Container>
   );
