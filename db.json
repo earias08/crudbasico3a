@@ -83,6 +83,18 @@
       "precioProducto": 100,
       "categoria": "salado",
       "id": 14
+    },
+    {
+      "nombreProducto": "alfajor de maicena",
+      "precioProducto": 70,
+      "categoria": "dulce",
+      "id": 15
+    },
+    {
+      "nombreProducto": "Medialuna con dulce de leche x unidad",
+      "precioProducto": 60,
+      "categoria": "dulce",
+      "id": 16
     }
   ]
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Form, Button, Alert } from "react-bootstrap";
 import Swal from 'sweetalert2';
 
-const AgregarProducto = () => {
+const AgregarProducto = (props) => {
   // crear states
   const [nombreProducto, setNombreProducto] = useState("");
   const [precioProducto, setPrecioProducto] = useState(0);
@@ -62,6 +62,8 @@ const AgregarProducto = () => {
           )
           // resetear el formulario
           e.target.reset();
+          // actualizar los datos
+          props.consultarAPI();
           // redireccionar al componente ListarProductos
         }
       } catch (error) {

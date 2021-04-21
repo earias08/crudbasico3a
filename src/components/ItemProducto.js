@@ -1,15 +1,24 @@
 import React from "react";
 import { ListGroup, Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPencilAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
 
-const ItemProducto = () => {
+const ItemProducto = (props) => {
   return (
     <ListGroup.Item className="d-flex justify-content-between">
       <p>
-        Nombre Producto <span className="font-weight-bold">$100</span>
+        {props.producto.nombreProducto}{" "}
+        <span className="font-weight-bold">
+          ${props.producto.precioProducto}
+        </span>
       </p>
       <div>
-        <Button variant="warning" className='mr-2'>Editar</Button>
-        <Button variant="danger">Borrar</Button>
+        <Button variant="warning" className="mr-2 text-light">
+          <FontAwesomeIcon icon={faPencilAlt}></FontAwesomeIcon>
+        </Button>
+        <Button variant="danger">
+          <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
+        </Button>
       </div>
     </ListGroup.Item>
   );
