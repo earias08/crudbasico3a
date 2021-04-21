@@ -77,6 +77,12 @@
       "precioProducto": 50,
       "categoria": "bebida-caliente",
       "id": 13
+    },
+    {
+      "nombreProducto": "pan x kg",
+      "precioProducto": 100,
+      "categoria": "salado",
+      "id": 14
     }
   ]
 }
