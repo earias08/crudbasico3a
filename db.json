@@ -8,7 +8,7 @@
     },
     {
       "nombreProducto": "Submarino",
-      "precioProducto": "100",
+      "precioProducto": "105",
       "categoria": "bebida-caliente",
       "id": 2
     },
@@ -37,14 +37,14 @@
       "id": 8
     },
     {
-      "nombreProducto": "licuado",
-      "precioProducto": 100,
+      "nombreProducto": "licuado de durazno",
+      "precioProducto": "120",
       "categoria": "bebida-fria",
       "id": 12
     },
     {
-      "nombreProducto": "te",
-      "precioProducto": 50,
+      "nombreProducto": "Té de canela",
+      "precioProducto": "55",
       "categoria": "bebida-caliente",
       "id": 13
     },
@@ -61,8 +61,8 @@
       "id": 15
     },
     {
-      "nombreProducto": "Medialuna con dulce de leche x unidad",
-      "precioProducto": 60,
+      "nombreProducto": "Medialuna x unidad",
+      "precioProducto": "55",
       "categoria": "dulce",
       "id": 16
     }
